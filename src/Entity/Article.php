@@ -84,7 +84,7 @@ class Article
 
     public function setPublishedAt(?\DateTimeInterface $publishedAt): self
     {
-        $this->publishetAt = $publishedAt;
+        $this->publishedAt = $publishedAt;
 
         return $this;
     }

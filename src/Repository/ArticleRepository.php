@@ -19,6 +19,23 @@ class ArticleRepository extends ServiceEntityRepository
         parent::__construct($registry, Article::class);
     }
 
+    public function getAllStories()
+    {
+        return $this->createQueryBuilder('a')
+                ->orderBy('a.publishedAt','DESC')
+                ->getQuery()
+                ->getResult();
+    }
+
+    public function getStoryBySlug($value)
+    {
+        return $this->createQueryBuilder('a')
+                ->andWhere('a.slug=:val')
+                ->setParameter('val', $value)
+                ->getQuery()
+                ->getResult();
+    }
+
     // /**
     //  * @return Article[] Returns an array of Article objects
     //  */

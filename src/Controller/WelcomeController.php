@@ -24,14 +24,108 @@ class WelcomeController extends AbstractController
      */
     public function index( EntityManagerInterface $em)
     {
-    	$repository= $em->getRepository(Article::class);
-    	$articles=$repository->findAll();
+    	$articles=$this->getDoctrine()->getRepository(Article::class)->getAllStories();
+        $publish_message=array();
+        $story_list=array();
 
-    	dump($articles);
+    	foreach($articles as $story)
+    	{
+            //var_dump($story->getTitle());
+            //var_dump($story->getSlug());
+            //var_dump($story->getPublishedAt());
+            //die();
+    		$t=$story->getPublishedAt();
+            $message='';
+            if($t==null)
+            {
+                $message="Unpublished.";
+            }
+            else
+            {
+                //$time=get_object_vars($t)['date'];
+                //$date=date_create($time);
+                $diff=date_diff(date_create(get_object_vars($t)['date']),date_create());
+                
+                if($diff->y>1)
+                {
+                    $message='Article published '.$diff->y." years ago.";
+                }
+                else if($diff->y==1)
+                {
+                    $message='Article published '.$diff->y." year ago.";
+                }
+                else
+                {
+                    $message='';
+                }
+
+                if($message=='')
+                {
+                    if($diff->m>1)
+                    {
+                        $message='Article published '.$diff->m." months ago.";
+                    }
+                    else if($diff->m==1)
+                    {
+                        $message='Article published '.$diff->m." month ago.";
+                    }
+                }
+
+                if($message=='')
+                {
+                    if($diff->d>1)
+                    {
+                        $message='Article published '.$diff->d." days ago.";
+                    }
+                    elseif($diff->d==1)
+                    {
+                        $message='Article published '.$diff->d." day ago.";
+                    }
+                }
+
+                if($message=='')
+                {
+                    if($diff->h>1)
+                    {
+                        $message='Article published '.$diff->h." hours ago.";
+                    }
+                    elseif($diff->h==1)
+                    {
+                        $message='Article published '.$diff->h." hour ago.";
+                    }
+                }
+
+                if($message=='')
+                {
+                    if($diff->i>1)
+                    {
+                        $message='Article published '.$diff->i." minutes ago.";
+                    }
+                    else
+                    {
+                        $message="Article published few minutes ago.";
+                    }
+                }
+            }
+            //var_dump($message);
+            $publish_message[]=$message;
+            //die();
+
+            $story_list[]=array('title'=>$story->getTitle(), 'slug'=>$story->getSlug(), 'release'=>$message);
+    	}
+
+    	//$repository= $em->getRepository(Article::class);
+    	//$articles=$repository->findAll();
+
+        //$repository = $em->getRepository(Article::class);
+        //$articles = $repository->getStoryBySlug('title535');
+
 
     	return $this->render('article/homepage.html.twig',
     	[
-    		'articles'=> $articles
+    		'articles'=> $articles,
+            'publish_message'=>$publish_message,
+            'story_data'=>$story_list
     	]);
 
 
@@ -57,6 +151,7 @@ class WelcomeController extends AbstractController
         $repository = $em->getRepository(Article::class);
         
         $article = $repository->findOneBy(['slug' => $slug]);
+
         if (!$article)
         {
             //throw $this->createNotFoundException(sprintf('No article for slug "%s"', $slug));
@@ -72,7 +167,8 @@ class WelcomeController extends AbstractController
 
         return $this->render('article/show.html.twig', [
         	'article'=>$article,
-        	'comments'=>$comments
+        	'comments'=>$comments,
+            'local_asteroids'=>$slug
         ]);
 
         /*

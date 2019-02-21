@@ -3,6 +3,7 @@
 {% block title %}Hello ArticleAdminController!{% endblock %}
 
 {% block body %}
+{#
 <style>
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
@@ -17,4 +18,46 @@
         <li>Your template at <code><a href="{{ 'C:/xampp/htdocs/projects/symfony/the_spacebar/templates/article_admin/index.html.twig'|file_link(0) }}">templates/article_admin/index.html.twig</a></code></li>
     </ul>
 </div>
+#}
+<div class="container">
+    <div class="row">
+    	<div class="main-article col-md-7 mb-5 pb-3">
+            <h4>Add new article</h4>
+            <form id="add_form" name="add_form" method="post" action={{ path('add_article') }}>
+            <label>Title</label><br>
+            <input type="text" id="title"><br>
+            <label>Text</label><br>
+            <textarea id="text_box"></textarea><br>
+            <label></label><br>
+            <input type="button" value="Submit" id="add_article_submit">
+            </form>
+            <div id="message">
+                {{ message }}
+            </div>
+        </div>
+
+        <div class="main-article col-md-5 mb-5 pb-3">
+            <h4>Add new quote</h4>
+            <form id="add_form" name="add_form" method="post" action={{ path('add_article') }}>
+            <label>Author</label><br>
+            <input type="text" id="author"><br>
+            <label>Quote</label><br>
+            <textarea id="quote_box"></textarea><br>
+            <label></label><br>
+            <input type="button" value="Submit" id="add_quote_submit">
+            </form>
+            <div id="message">
+                {{ message }}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+
+{{ parent() }}
+
+<script src="{{ asset('js/article_add.js') }}"></script>
+
 {% endblock %}

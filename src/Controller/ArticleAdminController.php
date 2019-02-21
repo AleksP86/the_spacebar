@@ -9,8 +9,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
-
+use Symfony\Component\HttpFoundation\Request;
 
 class ArticleAdminController extends AbstractController
 {
@@ -19,9 +20,13 @@ class ArticleAdminController extends AbstractController
      */
     public function index()
     {
+        return $this->render('article_admin/index.html.twig',[
+            'message'=>'']);
+        /*
         return $this->render('article_admin/index.html.twig', [
             'controller_name' => 'ArticleAdminController',
         ]);
+        */
     }
 
     /**
@@ -48,9 +53,9 @@ strip steak pork belly aliquip capicola officia. Labore deserunt esse chicken lo
 cow est ribeye adipisicing. Pig hamburger pork belly enim. Do porchetta minim capicola irure pancetta chuck
 fugiat.');
 
-    		if(rand(1,10)>2)
+            if(rand(1,10)>2)
     		{
-    			$article->setPublishedAt(new \DateTime(sprintf('-%d days', rand(1,100) ) ) );
+                $article->setPublishedAt(new \DateTime('@'.strtotime('now')) );
     		}
 
     		$em->persist($article);
@@ -58,5 +63,47 @@ fugiat.');
 
     		//return new Response('space rocks... include comets, asteroids & meteoroids');
     		return new Response(sprintf('New article id #%d slug: %s', $article->getId(), $article->getSlug() ) );
+    }
+
+    /**
+    * @Route("/add_article", name="add_article")
+    */
+    public function addNewArticle(EntityManagerInterface $em, Request $request)
+    {
+        $proceed=true;
+        if($_POST['title']=='')
+        {
+            $proceed=false;
+        }
+        if($_POST['text']=='')
+        {
+            $proceed=false;
+        }
+
+        if($proceed==false)
+        {
+            return new JsonResponse(['reply'=>false, 'content'=>array($_POST['title'], $_POST['text'])]);
+        }
+        else
+        {
+            //save to DB
+            $article=new Article();
+            $article->setTitle($_POST['title'])
+            ->setSlug($_POST['title'].rand(100,999))
+            ->setContent($_POST['text'])
+            ->setPublishedAt(date_create());
+
+            $em->persist($article);
+            $em->flush();
+
+            return new JsonResponse(['reply'=>true, 'content'=>array($article->getId(), $article->getSlug())]);
+        }        
+
+        //var_dump($request );
+        //var_dump($_POST['title']);
+        //return new JsonResponse($_POST['title']);
+        //return new JsonResponse(['hearths'=>rand(5,100)]);
+        /*return $this->render('article_admin/index.html.twig',[
+            'message'=>"show message"]);*/
     }
 }
