@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Article;
+use App\Entity\Quotes;
+
 use Doctrine\ORM\EntityManagerInterface;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -16,10 +18,13 @@ use Symfony\Component\HttpFoundation\Request;
 class ArticleAdminController extends AbstractController
 {
     /**
-     * @Route("/article/admin", name="article_admin")
+     * @Route("/admin", name="article_admin")
      */
-    public function index()
+    public function index(EntityManagerInterface $em)
     {
+        //count articles
+        $article_count=$this->getDoctrine()->getrepository(Article::class)->countArticles();
+
         return $this->render('article_admin/index.html.twig',[
             'message'=>'']);
         /*
@@ -105,5 +110,39 @@ fugiat.');
         //return new JsonResponse(['hearths'=>rand(5,100)]);
         /*return $this->render('article_admin/index.html.twig',[
             'message'=>"show message"]);*/
+    }
+
+    /**
+    * @Route("/add_quote", name="add_quote")
+    */
+    public function addNewQuote(EntityManagerInterface $em, Request $request)
+    {
+        $proceed=true;
+        if($_POST['author']=='')
+        {
+            $proceed=false;
+        }
+        if($_POST['text']=='')
+        {
+            $proceed=false;
+        }
+
+        if($proceed==false)
+        {
+            return new JsonResponse(['reply'=>false, 'content'=>array($_POST['author'], $_POST['text'])]);
+        }
+        else
+        {
+            //save to DB
+            $quote=new Quotes();
+            $quote->setAuthor($_POST['author'])
+            ->setContent($_POST['text'])
+            ->setAddDate(date_create());
+
+            $em->persist($quote);
+            $em->flush();
+
+            return new JsonResponse(['reply'=>true, 'content'=>array($quote->getId(), $quote->getAuthor())]);
+        }
     }
 }

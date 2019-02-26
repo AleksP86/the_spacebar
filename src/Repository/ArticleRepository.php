@@ -36,6 +36,16 @@ class ArticleRepository extends ServiceEntityRepository
                 ->getResult();
     }
 
+    public function countArticles()
+    {
+        $conn=$this->getEntityManager()->getConnection();
+        $sql='SELECT count(id) from article WHERE id>:id GROUP BY id';
+        $stmt=$conn->prepare($sql);
+        $stmt->execute(['id'=>0]);
+
+        return $stmt->fetchAll();
+    }
+
     // /**
     //  * @return Article[] Returns an array of Article objects
     //  */

@@ -31,6 +31,11 @@ class Quotes
      */
     private $add_date;
 
+    /**
+    * @ORM\Column(type="string", length=255)
+    */
+    private $link;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -68,6 +73,18 @@ class Quotes
     public function setAddDate(?\DateTimeInterface $add_date): self
     {
         $this->add_date = $add_date;
+
+        return $this;
+    }
+
+    public function getLink(): ?string
+    {
+        return $this->link;
+    }
+
+    public function setLink(string $link): self
+    {
+        $this->link = $link;
 
         return $this;
     }

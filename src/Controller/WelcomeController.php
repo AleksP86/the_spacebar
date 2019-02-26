@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 
 
 use App\Entity\Article;
+use App\Entity\Quotes;
 //use App\Service\Markdownhelper;
 //use App\Service\SlackClient;
 use Doctrine\ORM\EntityManagerInterface;
@@ -120,12 +121,25 @@ class WelcomeController extends AbstractController
         //$repository = $em->getRepository(Article::class);
         //$articles = $repository->getStoryBySlug('title535');
 
+        $quotes=$this->getDoctrine()->getRepository(Quotes::class)->findAll();
+        //var_dump($quotes);
+        $quotes_list=array();
+        foreach($quotes as $quote)
+        {
+            //var_dump($quote);
+            //echo "<br/>";
+            $quotes_list[]=array('author'=>$quote->getAuthor(),'message'=>$quote->getContent(), 'link'=>$quote->getLink());
+        }
+
+        //var_dump($quotes_list);
+
 
     	return $this->render('article/homepage.html.twig',
     	[
     		'articles'=> $articles,
             'publish_message'=>$publish_message,
-            'story_data'=>$story_list
+            'story_data'=>$story_list,
+            'quotes_list'=>$quotes_list
     	]);
 
 
