@@ -19,6 +19,16 @@ class QuotesRepository extends ServiceEntityRepository
         parent::__construct($registry, Quotes::class);
     }
 
+    public function countQuotes()
+    {
+        $conn=$this->getEntityManager()->getConnection();
+        $sql='SELECT count(id) as \'counted\' from quotes WHERE id>:id';
+        $stmt=$conn->prepare($sql);
+        $stmt->execute(['id'=>0]);
+
+        return $stmt->fetchAll();
+    }
+
     // /**
     //  * @return Quotes[] Returns an array of Quotes objects
     //  */

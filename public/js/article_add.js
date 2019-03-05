@@ -7,6 +7,8 @@ $('#add_article_submit').on('click',function()
 	//console.log(title);
 	//console.log(text);
 
+	//console.log($('#upl_img').val());
+	
 	$.ajax({
 		url:'../add_article',
 		type:'POST',
@@ -15,13 +17,16 @@ $('#add_article_submit').on('click',function()
 		{
 			//console.log('ajax success');
 			//console.log(data);
-			$('#message_quote').html("Article saved.");
+			$('#message_article').html("Article saved.");
+			$('#title').val('');
+			$('#text_box').val('');
 		},
 		error: function()
 		{
 			console.log('ajax failed');
 		}
 	});
+	
 });
 
 $('#add_quote_submit').on('click',function()

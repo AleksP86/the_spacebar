@@ -6,6 +6,8 @@ use App\Entity\Article;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
+use Doctrine\ORM\QueryBuilder;
+
 /**
  * @method Article|null find($id, $lockMode = null, $lockVersion = null)
  * @method Article|null findOneBy(array $criteria, array $orderBy = null)
@@ -39,11 +41,24 @@ class ArticleRepository extends ServiceEntityRepository
     public function countArticles()
     {
         $conn=$this->getEntityManager()->getConnection();
-        $sql='SELECT count(id) from article WHERE id>:id GROUP BY id';
+        $sql='SELECT count(id) as \'counted\' from article WHERE id>:id';
         $stmt=$conn->prepare($sql);
         $stmt->execute(['id'=>0]);
 
         return $stmt->fetchAll();
+
+        return $this->createQueryBuilder('a')
+                ->andWhere('a.exampleField = :val')
+                ->setParameter('val', $value)
+                ->orderBy('a.id','ASC')
+                ->setMaxResults(10)
+                ->getQuery()
+                ->getResult();
+    }
+
+    public function QueryBuilderaddArticle($title,$text, QueryBuilder $qb)
+    {
+
     }
 
     // /**

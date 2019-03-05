@@ -112,7 +112,7 @@ class WelcomeController extends AbstractController
             $publish_message[]=$message;
             //die();
 
-            $story_list[]=array('title'=>$story->getTitle(), 'slug'=>$story->getSlug(), 'release'=>$message);
+            $story_list[]=array('title'=>$story->getTitle(), 'slug'=>$story->getSlug(), 'release'=>$message, 'author'=>$story->getAuthor());
     	}
 
     	//$repository= $em->getRepository(Article::class);
@@ -170,8 +170,73 @@ class WelcomeController extends AbstractController
         {
             //throw $this->createNotFoundException(sprintf('No article for slug "%s"', $slug));
         }
+        $diff=date_diff(date_create( get_object_vars($article->getPublishedAt())['date'] ),date_create());
+        //dump($diff);
 
-        //dump($article);die;
+        $message='';
+        if($diff->y>1)
+        {
+            $message=$diff->y." years ago.";
+        }
+        else if($diff->y==1)
+        {
+            $message=$diff->y." year ago.";
+        }
+        else
+        {
+            $message='';
+        }
+
+        if($message=='')
+        {
+            if($diff->m>1)
+            {
+                $message=$diff->m." months ago.";
+            }
+            else if($diff->m==1)
+            {
+                $message=$diff->m." month ago.";
+            }
+        }
+
+        if($message=='')
+        {
+            if($diff->d>1)
+            {
+                $message=$diff->d." days ago.";
+            }
+            elseif($diff->d==1)
+            {
+                $message=$diff->d." day ago.";
+            }
+        }
+
+        if($message=='')
+        {
+            if($diff->h>1)
+            {
+                $message=$diff->h." hours ago.";
+            }
+            elseif($diff->h==1)
+            {
+                $message=$diff->h." hour ago.";
+            }
+        }
+
+        if($message=='')
+        {
+            if($diff->i>1)
+            {
+                $message=$diff->i." minutes ago.";
+            }
+            else
+            {
+                $message="few minutes ago.";
+            }
+        }
+
+        //var_dump($message);
+        //die;
 
         $comments = [
             'I ate a normal rock once. It did NOT taste like bacon!',
@@ -182,38 +247,9 @@ class WelcomeController extends AbstractController
         return $this->render('article/show.html.twig', [
         	'article'=>$article,
         	'comments'=>$comments,
-            'local_asteroids'=>$slug
+            'local_asteroids'=>$slug,
+            'publish_time'=>$message
         ]);
-
-        /*
-        $articleContent = <<<EOF
-Spicy **jalapeno bacon** ipsum dolor amet veniam shank in dolore. Ham hock nisi landjaeger cow,
-lorem proident [beef ribs](https://baconipsum.com/) aute enim veniam ut cillum pork chuck picanha. Dolore reprehenderit
-labore minim pork belly spare ribs cupim short loin in. Elit exercitation eiusmod dolore cow
-**turkey** shank eu pork belly meatball non cupim.
-Laboris beef ribs fatback fugiat eiusmod jowl kielbasa alcatra dolore velit ea ball tip. Pariatur
-laboris sunt venison, et laborum dolore minim non meatball. Shankle eu flank aliqua shoulder,
-capicola biltong frankfurter boudin cupim officia. Exercitation fugiat consectetur ham. Adipisicing
-picanha shank et filet mignon pork belly ut ullamco. Irure velit turducken ground round doner incididunt
-occaecat lorem meatball prosciutto quis strip steak.
-Meatball adipisicing ribeye bacon strip steak eu. Consectetur ham hock pork hamburger enim strip steak
-mollit quis officia meatloaf tri-tip swine. Cow ut reprehenderit, buffalo incididunt in filet mignon
-strip steak pork belly aliquip capicola officia. Labore deserunt esse chicken lorem shoulder tail consectetur
-cow est ribeye adipisicing. Pig hamburger pork belly enim. Do porchetta minim capicola irure pancetta chuck
-fugiat.
-EOF;
-        
-        $articleContent = $markdownHelper->parse($articleContent);
-        */
-
-        /*
-        return $this->render('article/show.html.twig', [
-            'title' => ucwords(str_replace('-', ' ', $slug)),
-            'slug' => $slug,
-            'comments' => $comments,
-            'articleContent' => $articleContent,
-        ]);
-        */
     }
     
 
@@ -241,10 +277,13 @@ EOF;
     /**
     * @Route("/news/{slug}/heart",name="article_toggle_heart", methods={"POST"})
     */
-    public function toggleArticleHeart($slug)
+    public function toggleArticleHeart($slug, Article $article, EntityManagerInterface $em)
     {
-    	return new JsonResponse(['hearths'=>rand(5,100)]);
-    	return $this->json(['hearths'=>rand(5,100)]);
+        $article->incrementHeartCount();
+        //$article->setHeartCount($article->getHeartCount()+1);
+        //$em->flush();
+    	return new JsonResponse(['hearths'=>$article->getHeartCount() ]);
+    	//return $this->json(['hearths'=>rand(5,100)]);
     }
 
 

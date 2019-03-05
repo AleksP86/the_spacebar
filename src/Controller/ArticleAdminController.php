@@ -24,9 +24,15 @@ class ArticleAdminController extends AbstractController
     {
         //count articles
         $article_count=$this->getDoctrine()->getrepository(Article::class)->countArticles();
+        //var_dump($article_count[0]['counted']);
+        //count quotes
+        $quote_count=$this->getDoctrine()->getrepository(Quotes::class)->countQuotes();
 
         return $this->render('article_admin/index.html.twig',[
-            'message'=>'']);
+            'message'=>'',
+            'article_count'=>$article_count[0]['counted'],
+            'quote_count'=>$quote_count[0]['counted'],
+        ]);
         /*
         return $this->render('article_admin/index.html.twig', [
             'controller_name' => 'ArticleAdminController',
@@ -71,7 +77,7 @@ fugiat.');
     }
 
     /**
-    * @Route("/add_article", name="add_article")
+    * @Route("/add_article", name="add_article", methods="POST")
     */
     public function addNewArticle(EntityManagerInterface $em, Request $request)
     {
@@ -96,7 +102,10 @@ fugiat.');
             $article->setTitle($_POST['title'])
             ->setSlug($_POST['title'].rand(100,999))
             ->setContent($_POST['text'])
-            ->setPublishedAt(date_create());
+            ->setPublishedAt(date_create())
+            ->setAuthor('Somebody')
+            ->setHeartCount(rand(5,100))
+            ->setImageFilename('asteroid.jpeg');
 
             $em->persist($article);
             $em->flush();
