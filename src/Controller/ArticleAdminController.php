@@ -105,6 +105,8 @@ fugiat.');
             ->setPublishedAt(date_create())
             ->setAuthor('Somebody')
             ->setHeartCount(rand(5,100))
+            ->setCreatedAt(date_create())
+            ->setUpdatedAt(new \DateTime('0000-00-00 00:00:00') )
             ->setImageFilename('asteroid.jpeg');
 
             $em->persist($article);

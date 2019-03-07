@@ -281,7 +281,7 @@ class WelcomeController extends AbstractController
     {
         $article->incrementHeartCount();
         //$article->setHeartCount($article->getHeartCount()+1);
-        //$em->flush();
+        $em->flush();
     	return new JsonResponse(['hearths'=>$article->getHeartCount() ]);
     	//return $this->json(['hearths'=>rand(5,100)]);
     }
