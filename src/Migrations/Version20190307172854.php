@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20190304191054 extends AbstractMigration
+final class Version20190307172854 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -22,9 +22,7 @@ final class Version20190304191054 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE article CHANGE author author VARCHAR(255) DEFAULT NULL, CHANGE image_filename image_filename VARCHAR(255) DEFAULT NULL');
-        $this->addSql('ALTER TABLE article RENAME INDEX uniq_23a0e66fec530a9 TO UNIQ_23A0E66989D9B62');
-        $this->addSql('ALTER TABLE quotes DROP add_link');
+        $this->addSql('ALTER TABLE quotes CHANGE link link VARCHAR(255) DEFAULT NULL');
     }
 
     public function down(Schema $schema) : void
@@ -32,8 +30,6 @@ final class Version20190304191054 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE article CHANGE author author VARCHAR(100) DEFAULT NULL COLLATE utf8mb4_unicode_ci, CHANGE image_filename image_filename VARCHAR(100) DEFAULT NULL COLLATE utf8mb4_unicode_ci');
-        $this->addSql('ALTER TABLE article RENAME INDEX uniq_23a0e66989d9b62 TO UNIQ_23A0E66FEC530A9');
-        $this->addSql('ALTER TABLE quotes ADD add_link VARCHAR(255) NOT NULL COLLATE utf8mb4_unicode_ci');
+        $this->addSql('ALTER TABLE quotes CHANGE link link VARCHAR(255) NOT NULL COLLATE utf8mb4_unicode_ci');
     }
 }

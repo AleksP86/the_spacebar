@@ -33,11 +33,6 @@ class ArticleAdminController extends AbstractController
             'article_count'=>$article_count[0]['counted'],
             'quote_count'=>$quote_count[0]['counted'],
         ]);
-        /*
-        return $this->render('article_admin/index.html.twig', [
-            'controller_name' => 'ArticleAdminController',
-        ]);
-        */
     }
 
     /**
@@ -113,14 +108,7 @@ fugiat.');
             $em->flush();
 
             return new JsonResponse(['reply'=>true, 'content'=>array($article->getId(), $article->getSlug())]);
-        }        
-
-        //var_dump($request );
-        //var_dump($_POST['title']);
-        //return new JsonResponse($_POST['title']);
-        //return new JsonResponse(['hearths'=>rand(5,100)]);
-        /*return $this->render('article_admin/index.html.twig',[
-            'message'=>"show message"]);*/
+        }
     }
 
     /**
@@ -137,10 +125,14 @@ fugiat.');
         {
             $proceed=false;
         }
+        if(!filter_var($_POST['link'], FILTER_VALIDATE_URL))
+        {
+            $proceed=false;
+        }
 
         if($proceed==false)
         {
-            return new JsonResponse(['reply'=>false, 'content'=>array($_POST['author'], $_POST['text'])]);
+            return new JsonResponse(['reply'=>false, 'content'=>array($_POST['author'], $_POST['text'], $_POST['link'])]);
         }
         else
         {
@@ -148,7 +140,8 @@ fugiat.');
             $quote=new Quotes();
             $quote->setAuthor($_POST['author'])
             ->setContent($_POST['text'])
-            ->setAddDate(date_create());
+            ->setAddDate(date_create())
+            ->setLink($_POST['link']);
 
             $em->persist($quote);
             $em->flush();

@@ -20,6 +20,7 @@ $('#add_article_submit').on('click',function()
 			$('#message_article').html("Article saved.");
 			$('#title').val('');
 			$('#text_box').val('');
+			location.reload();
 		},
 		error: function()
 		{
@@ -33,6 +34,7 @@ $('#add_quote_submit').on('click',function()
 {
 	var author=$('#author').val();
 	var quote=$('#quote_box').val();
+	var link=$('#link_box').val();
 
 	//console.log(author);
 	//console.log(quote);
@@ -42,7 +44,7 @@ $('#add_quote_submit').on('click',function()
 	$.ajax({
 		url:'../add_quote',
 		type:'POST',
-		data:{author:author, text:quote},
+		data:{author:author, text:quote, link:link},
 		success: function(data)
 		{
 			//console.log('ajax success');

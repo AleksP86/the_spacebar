@@ -56,11 +56,6 @@ class ArticleRepository extends ServiceEntityRepository
                 ->getResult();
     }
 
-    public function QueryBuilderaddArticle($title,$text, QueryBuilder $qb)
-    {
-
-    }
-
     // /**
     //  * @return Article[] Returns an array of Article objects
     //  */

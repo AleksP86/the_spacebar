@@ -1,0 +1,425 @@
+warning: LF will be replaced by CRLF in composer.json.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in composer.lock.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in config/bundles.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in src/Controller/ArticleAdminController.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in src/Controller/WelcomeController.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in src/Entity/Quotes.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in src/Entity/User.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in src/Repository/ArticleRepository.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in symfony.lock.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in templates/article_admin/index.html.twig.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in templates/base.html.twig.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in templates/welcome/index.html.twig.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/autoload.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/composer/ClassLoader.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/composer/LICENSE.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/composer/autoload_classmap.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/composer/autoload_files.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/composer/autoload_namespaces.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/composer/autoload_psr4.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/composer/autoload_real.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/composer/autoload_static.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/composer/installed.json.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/ocramius/package-versions/src/PackageVersions/Versions.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/.gitignore.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/CHANGELOG.md.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/CacheWarmer/ExpressionCacheWarmer.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Command/UserPasswordEncoderCommand.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/DataCollector/SecurityDataCollector.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Debug/TraceableFirewallListener.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Debug/WrappedListener.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/DependencyInjection/Compiler/AddExpressionLanguageProvidersPass.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/DependencyInjection/Compiler/AddSecurityVotersPass.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/DependencyInjection/Compiler/AddSessionDomainConstraintPass.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/DependencyInjection/Compiler/RegisterCsrfTokenClearingLogoutHandlerPass.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/DependencyInjection/MainConfiguration.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/DependencyInjection/Security/Factory/AbstractFactory.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/DependencyInjection/Security/Factory/FormLoginFactory.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/DependencyInjection/Security/Factory/FormLoginLdapFactory.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/DependencyInjection/Security/Factory/GuardAuthenticationFactory.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/DependencyInjection/Security/Factory/HttpBasicFactory.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/DependencyInjection/Security/Factory/HttpBasicLdapFactory.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/DependencyInjection/Security/Factory/JsonLoginFactory.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/DependencyInjection/Security/Factory/JsonLoginLdapFactory.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/DependencyInjection/Security/Factory/RememberMeFactory.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/DependencyInjection/Security/Factory/RemoteUserFactory.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/DependencyInjection/Security/Factory/SecurityFactoryInterface.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/DependencyInjection/Security/Factory/SimpleFormFactory.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/DependencyInjection/Security/Factory/SimplePreAuthenticationFactory.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/DependencyInjection/Security/Factory/X509Factory.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/DependencyInjection/Security/UserProvider/InMemoryFactory.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/DependencyInjection/Security/UserProvider/LdapFactory.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/DependencyInjection/Security/UserProvider/UserProviderFactoryInterface.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/DependencyInjection/SecurityExtension.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/EventListener/FirewallListener.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/EventListener/VoteListener.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/LICENSE.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/README.md.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Resources/config/collectors.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Resources/config/console.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Resources/config/guard.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Resources/config/security.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Resources/config/security_debug.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Resources/config/security_listeners.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Resources/config/security_rememberme.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Resources/config/templating_php.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Resources/config/templating_twig.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Resources/views/Collector/icon.svg.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Resources/views/Collector/security.html.twig.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Security/FirewallConfig.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Security/FirewallContext.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Security/FirewallMap.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/SecurityBundle.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/SecurityUserValueResolver.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Templating/Helper/LogoutUrlHelper.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Templating/Helper/SecurityHelper.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/CacheWarmer/ExpressionCacheWarmerTest.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DataCollector/SecurityDataCollectorTest.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Debug/TraceableFirewallListenerTest.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Compiler/AddExpressionLanguageProvidersPassTest.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Compiler/AddSecurityVotersPassTest.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Compiler/AddSessionDomainConstraintPassTest.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/CompleteConfigurationTest.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/UserProvider/DummyProvider.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/php/access_decision_manager_customized_config.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/php/access_decision_manager_default_strategy.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/php/access_decision_manager_service.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/php/access_decision_manager_service_and_strategy.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/php/argon2i_encoder.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/php/container1.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/php/firewall_provider.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/php/firewall_undefined_provider.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/php/listener_provider.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/php/listener_undefined_provider.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/php/merge.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/php/merge_import.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/php/no_custom_user_checker.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/php/remember_me_options.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/php/simple_auth.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/xml/access_decision_manager_customized_config.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/xml/access_decision_manager_default_strategy.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/xml/access_decision_manager_service.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/xml/access_decision_manager_service_and_strategy.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/xml/argon2i_encoder.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/xml/container1.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/xml/firewall_provider.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/xml/firewall_undefined_provider.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/xml/listener_provider.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/xml/listener_undefined_provider.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/xml/merge.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/xml/merge_import.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/xml/no_custom_user_checker.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/xml/remember_me_options.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/xml/simple_auth.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/yml/access_decision_manager_customized_config.yml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/yml/access_decision_manager_default_strategy.yml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/yml/access_decision_manager_service.yml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/yml/access_decision_manager_service_and_strategy.yml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/yml/argon2i_encoder.yml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/yml/container1.yml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/yml/firewall_provider.yml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/yml/firewall_undefined_provider.yml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/yml/listener_provider.yml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/yml/listener_undefined_provider.yml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/yml/merge.yml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/yml/merge_import.yml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/yml/no_custom_user_checker.yml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/yml/remember_me_options.yml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Fixtures/yml/simple_auth.yml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/MainConfigurationTest.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/PhpCompleteConfigurationTest.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Security/Factory/AbstractFactoryTest.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/Security/Factory/GuardAuthenticationFactoryTest.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/SecurityExtensionTest.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/XmlCompleteConfigurationTest.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/DependencyInjection/YamlCompleteConfigurationTest.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/EventListener/VoteListenerTest.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/AuthenticationCommencingTest.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/AutowiringTypesTest.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/Bundle/AutowiringBundle/AutowiredServices.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/Bundle/AutowiringBundle/AutowiringBundle.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/Bundle/CsrfFormLoginBundle/Controller/LoginController.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/Bundle/CsrfFormLoginBundle/CsrfFormLoginBundle.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/Bundle/CsrfFormLoginBundle/Form/UserLoginType.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/Bundle/CsrfFormLoginBundle/Resources/config/routing.yml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/Bundle/CsrfFormLoginBundle/Resources/views/Login/after_login.html.twig.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/Bundle/CsrfFormLoginBundle/Resources/views/Login/login.html.twig.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/Bundle/FirewallEntryPointBundle/DependencyInjection/FirewallEntryPointExtension.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/Bundle/FirewallEntryPointBundle/FirewallEntryPointBundle.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/Bundle/FirewallEntryPointBundle/Resources/config/services.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/Bundle/FirewallEntryPointBundle/Security/EntryPointStub.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/Bundle/FormLoginBundle/Controller/LocalizedController.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/Bundle/FormLoginBundle/Controller/LoginController.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/Bundle/FormLoginBundle/DependencyInjection/FormLoginExtension.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/Bundle/FormLoginBundle/FormLoginBundle.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/Bundle/FormLoginBundle/Resources/config/localized_routing.yml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/Bundle/FormLoginBundle/Resources/config/routing.yml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/Bundle/FormLoginBundle/Resources/views/Localized/login.html.twig.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/Bundle/FormLoginBundle/Resources/views/Login/after_login.html.twig.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/Bundle/FormLoginBundle/Resources/views/Login/login.html.twig.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/Bundle/FormLoginBundle/Security/LocalizedFormFailureHandler.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/Bundle/JsonLoginBundle/Controller/TestController.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/Bundle/JsonLoginBundle/JsonLoginBundle.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/Bundle/JsonLoginBundle/Security/Http/JsonAuthenticationFailureHandler.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/Bundle/JsonLoginBundle/Security/Http/JsonAuthenticationSuccessHandler.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/Bundle/MissingUserProviderBundle/MissingUserProviderBundle.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/CsrfFormLoginTest.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/FirewallEntryPointTest.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/FormLoginTest.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/JsonLoginLdapTest.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/JsonLoginTest.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/LocalizedRoutesAsPathTest.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/LogoutTest.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/MissingUserProviderTest.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/SecurityRoutingIntegrationTest.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/SecurityTest.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/SwitchUserTest.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/UserPasswordEncoderCommandTest.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/WebTestCase.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/app/AppKernel.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/app/AutowiringTypes/bundles.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/app/AutowiringTypes/config.yml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/app/CsrfFormLogin/bundles.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/app/CsrfFormLogin/config.yml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/app/CsrfFormLogin/routes_as_path.yml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/app/CsrfFormLogin/routing.yml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/app/FirewallEntryPoint/bundles.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/app/FirewallEntryPoint/config.yml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/app/FirewallEntryPoint/config_form_login.yml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/app/FirewallEntryPoint/routing.yml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/app/JsonLogin/bundles.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/app/JsonLogin/config.yml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/app/JsonLogin/custom_handlers.yml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/app/JsonLogin/routing.yml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/app/JsonLogin/switchuser_stateless.yml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/app/JsonLoginLdap/bundles.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/app/JsonLoginLdap/config.yml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/app/LogoutAccess/bundles.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/app/LogoutAccess/config.yml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/app/LogoutAccess/routing.yml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/app/LogoutWithoutSessionInvalidation/bundles.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/app/LogoutWithoutSessionInvalidation/config.yml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/app/LogoutWithoutSessionInvalidation/routing.yml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/app/MissingUserProvider/bundles.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/app/MissingUserProvider/config.yml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/app/MissingUserProvider/routing.yml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/app/PasswordEncode/argon2i.yml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/app/PasswordEncode/bundles.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/app/PasswordEncode/config.yml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/app/PasswordEncode/emptysalt.txt.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/app/RememberMeLogout/bundles.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/app/RememberMeLogout/config.yml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfony/security-bundle/Tests/Functional/app/RememberMeLogout/routing.yml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in vendor/symfo

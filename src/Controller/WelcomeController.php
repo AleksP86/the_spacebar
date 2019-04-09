@@ -8,14 +8,10 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
-
 use App\Entity\Article;
 use App\Entity\Quotes;
-//use App\Service\Markdownhelper;
-//use App\Service\SlackClient;
+use App\Entity\Comment;
 use Doctrine\ORM\EntityManagerInterface;
-//use Psr\Log\LoggerInterface;
-//use Twig\Evironment;
 
 class WelcomeController extends AbstractController
 {
@@ -31,10 +27,6 @@ class WelcomeController extends AbstractController
 
     	foreach($articles as $story)
     	{
-            //var_dump($story->getTitle());
-            //var_dump($story->getSlug());
-            //var_dump($story->getPublishedAt());
-            //die();
     		$t=$story->getPublishedAt();
             $message='';
             if($t==null)
@@ -43,8 +35,6 @@ class WelcomeController extends AbstractController
             }
             else
             {
-                //$time=get_object_vars($t)['date'];
-                //$date=date_create($time);
                 $diff=date_diff(date_create(get_object_vars($t)['date']),date_create());
                 
                 if($diff->y>1)
@@ -244,35 +234,16 @@ class WelcomeController extends AbstractController
     	     'I like bacon too! Buy some from my site! bakinsomebacon.com',
         ];
 
+        //get comments from DB
+
         return $this->render('article/show.html.twig', [
         	'article'=>$article,
         	'comments'=>$comments,
+            'commentsDB'=>$this->getDoctrine()->getRepository(Comment::class)->getComments($slug),
             'local_asteroids'=>$slug,
             'publish_time'=>$message
         ]);
     }
-    
-
-
-    /*
-    public function show($slug)
-    {
-    	$comments = [
-            'I ate a normal rock once. It did NOT taste like bacon!',
-            'Woohoo! I\'m going on an all-asteroid diet!',
-            'I like bacon too! Buy some from my site! bakinsomebacon.com',
-        ];
-
-        //var_dump($slug);
-
-    	return $this->render('article/show.html.twig',
-    		[
-    			'title'=>ucwords(str_replace('-',' ',$slug)),
-    			'comments'=>$comments,
-    			'slug'=>$slug
-    	]);
-    }
-    */
 
     /**
     * @Route("/news/{slug}/heart",name="article_toggle_heart", methods={"POST"})
@@ -284,6 +255,26 @@ class WelcomeController extends AbstractController
         $em->flush();
     	return new JsonResponse(['hearths'=>$article->getHeartCount() ]);
     	//return $this->json(['hearths'=>rand(5,100)]);
+    }
+
+    /**
+    * @Route("/news/{slug}/comment", name="add_comment", methods={"POST"})
+    */
+    public function addComment($slug, EntityManagerInterface $em)
+    {
+        //var_dump($_POST);
+        $comment=new Comment();
+        $comment->setContent($_POST['message'])
+        //->setPublishedAt(date_create())
+        ->setArticle($slug)
+        ->setAuthorName('Somebody')
+        //->setCreatedAt(date_create())
+        ;
+        
+        $em->persist($comment);
+        $em->flush();
+
+        return new JsonResponse(['data'=>array($_POST, $slug) ]);
     }
 
 
