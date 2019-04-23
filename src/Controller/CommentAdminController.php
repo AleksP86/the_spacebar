@@ -14,6 +14,11 @@ use Symfony\Component\HttpFoundation\Request;
 
 use Doctrine\ORM\EntityManager;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+
+/**
+ * @IsGranted("ROLE_ADMIN_COMMENT")
+ */
 class CommentAdminController extends AbstractController
 {
     /**

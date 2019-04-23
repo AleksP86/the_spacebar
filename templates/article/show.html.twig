@@ -12,7 +12,7 @@
                         <div class="show-article-title-container d-inline-block pl-3 align-middle">
                             <span class="show-article-title ">{{ article.title }}</span>
                             <br>
-                            <span class="align-left article-details"><img class="article-author-img rounded-circle" src="{{ asset('images/alien-profile.png') }}"> Mike Ferengi </span>
+                            <span class="align-left article-details"><img class="article-author-img rounded-circle" src="{{ asset('images/alien-profile.png') }}"> {{ article.author }} </span>
                             <span class="pl-2 article-details">{{ publish_time }}</span>
                             <span class="pl-2 article-details">
                             	<span class="js-like-article-count"> {{ article.heartCount }} </span>
@@ -37,6 +37,27 @@
                     <div class="col-sm-12">
                         <h3><i class="pr-3 fa fa-comment"></i>{{commentsDB|length}} Comments</h3>
                         <hr>
+
+                        {% if app.session.get('logged_user') is defined %}
+                            {% if app.session.get('logged_user')!="" %}
+                                <div class="row mb-5">
+                                    <div class="col-sm-12">
+                                        <img class="comment-img rounded-circle" src="{{ asset('images/astronaut-profile.png') }}">
+                                        <div class="comment-container d-inline-block pl-3 align-top">
+                                            <span class="commenter-name" id="commenter-name">{{ app.session.get('logged_user') }}</span>
+                                            <div class="form-group">
+                                                <textarea class="form-control comment-form" id="articleText" rows="1"></textarea>
+                                            </div>
+                                            <button type="submit" class="btn btn-info" id="submit_comment">Comment</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endif %}
+
+
+
+                        {#
                         <div class="row mb-5">
                             <div class="col-sm-12">
                                 <img class="comment-img rounded-circle" src="{{ asset('images/astronaut-profile.png') }}">
@@ -49,6 +70,7 @@
                                 </div>
                             </div>
                         </div>
+                        #}
 
                         {% for comment_data in commentsDB %}
 

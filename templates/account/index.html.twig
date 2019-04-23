@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+	{{ parent() }}
+{% endblock %}
+
+{% block title %}Manage Account!{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<div class="row user-menu-container square">
+			<div class="col-md-12 user-details">
+				<div class="row spacepurplebg white">
+					<div class="com-md-2 no-pad">
+						<div class="user-image">
+							<img src="{{ app.user.avatarUrl }}" class="img-responsive thumbnail">
+							<img src="https://robohash.org/{{ app.user.email }}?size=100x100" class="img-responsive thumbnail">
+							<img src="{{ asset('images/astronaut-profile.png') }}" class="nav-profile-img rounded-circle">
+						</div>
+					</div>
+					<div class="col-md-10 no-pad">
+						<div class="user-pad">
+							<h3>Welcome back {{ app.user.firstName }}</h3>
+							{% if app.user.twitterUsername %}
+							<h4 class="white"><i class="fa fa-twitter"></i> {{ app.user.twitterUsername }} </h4>
+							{% endif  %}
+							<a class="btn btn-labeled btn-info" href="#">
+								<span class="btn-label"><i class="fa fa-pencil"></i></span> Update
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="row overview">
+					<div class="col-md-4 user-pad text-center">
+						<h3>Comments</h3>
+						<h4>Neki broj</h4>
+					</div>
+					<div class="col-md-4 user-pad text-center">
+						<h3>Articles read</h3>
+						<h4>Neki broj</h4>
+					</div>
+					<div class="col-md-4 user-pad text-center">
+						<h3>Likes</h3>
+						<h4>Neki broj</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

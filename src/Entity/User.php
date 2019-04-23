@@ -9,7 +9,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  */
-class User
+class User implements UserInterface
 {
     /**
      * @ORM\Id()
@@ -53,6 +53,13 @@ class User
     */
     private $firstName;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $twitterUsername;
+
+    private $avatarUrl;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -69,9 +76,9 @@ class User
         return $this;
     }
 
-    public function getUsername(): ?string
+    public function getUsername(): string
     {
-        return $this->username;
+        return (string) $this->username;
     }
 
     public function getRoles():array
@@ -140,5 +147,37 @@ class User
     {
         $this->firstName= $firstName;
         return $this;
+    }
+
+    public function getSalt()
+    {
+
+    }
+
+    public function eraseCredentials()
+    {
+
+    }
+
+    public function getTwitterUsername(): ?string
+    {
+        return $this->twitterUsername;
+    }
+
+    public function setTwitterUsername(?string $twitterUsername): self
+    {
+        $this->twitterUsername = $twitterUsername;
+
+        return $this;
+    }
+
+    public function getAvatarUrl(string $size = null): string
+    {
+        $url = 'https://robohash.org/'.$this->getEmail();
+
+        if($size)
+            $url .=sprintf('?size=%dx%d', $size, $size);
+
+        return $url;
     }
 }

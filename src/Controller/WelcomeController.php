@@ -13,13 +13,15 @@ use App\Entity\Quotes;
 use App\Entity\Comment;
 use Doctrine\ORM\EntityManagerInterface;
 
+use Symfony\Component\HttpFoundation\Request;
+
 class WelcomeController extends AbstractController
 {
 	
     /**
      * @Route("/", name="welcome")
      */
-    public function index( EntityManagerInterface $em)
+    public function index( EntityManagerInterface $em, Request $request)
     {
     	$articles=$this->getDoctrine()->getRepository(Article::class)->getAllStories();
         $publish_message=array();
@@ -105,25 +107,13 @@ class WelcomeController extends AbstractController
             $story_list[]=array('title'=>$story->getTitle(), 'slug'=>$story->getSlug(), 'release'=>$message, 'author'=>$story->getAuthor());
     	}
 
-    	//$repository= $em->getRepository(Article::class);
-    	//$articles=$repository->findAll();
-
-        //$repository = $em->getRepository(Article::class);
-        //$articles = $repository->getStoryBySlug('title535');
-
         $quotes=$this->getDoctrine()->getRepository(Quotes::class)->findAll();
-        //var_dump($quotes);
         $quotes_list=array();
         foreach($quotes as $quote)
         {
-            //var_dump($quote);
-            //echo "<br/>";
             $quotes_list[]=array('author'=>$quote->getAuthor(),'message'=>$quote->getContent(), 'link'=>$quote->getLink());
         }
-
-        //var_dump($quotes_list);
-
-
+        
     	return $this->render('article/homepage.html.twig',
     	[
     		'articles'=> $articles,
@@ -131,12 +121,6 @@ class WelcomeController extends AbstractController
             'story_data'=>$story_list,
             'quotes_list'=>$quotes_list
     	]);
-
-
-    	//return $this->render('article/homepage.html.twig');
-        /*return $this->render('welcome/index.html.twig', [
-            'controller_name' => 'WelcomeController',
-        ]);*/
     }
 
     /**
@@ -161,7 +145,6 @@ class WelcomeController extends AbstractController
             //throw $this->createNotFoundException(sprintf('No article for slug "%s"', $slug));
         }
         $diff=date_diff(date_create( get_object_vars($article->getPublishedAt())['date'] ),date_create());
-        //dump($diff);
 
         $message='';
         if($diff->y>1)
@@ -267,7 +250,7 @@ class WelcomeController extends AbstractController
         $comment->setContent($_POST['message'])
         //->setPublishedAt(date_create())
         ->setArticle($slug)
-        ->setAuthorName('Somebody')
+        ->setAuthorName($_POST['commented'])
         //->setCreatedAt(date_create())
         ;
         

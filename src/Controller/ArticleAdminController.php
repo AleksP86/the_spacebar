@@ -5,6 +5,8 @@ namespace App\Controller;
 use App\Entity\Article;
 use App\Entity\Quotes;
 
+use App\Entity\User;
+
 use Doctrine\ORM\EntityManagerInterface;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -14,6 +16,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
+
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+/**
+ * @IsGranted("ROLE_ADMIN_ARTICLE")
+ */
 
 class ArticleAdminController extends AbstractController
 {
@@ -33,6 +41,18 @@ class ArticleAdminController extends AbstractController
             'article_count'=>$article_count[0]['counted'],
             'quote_count'=>$quote_count[0]['counted'],
         ]);
+    }
+
+    /**
+    * @Route("/admin/new_user");
+    */
+    public function newUser(EntityManagerInterface $em)
+    {
+        $user=new User();
+        $user->setUsername('username')->setCreatedDate( new \DateTime('@'.strtotime('now'))  )->setImage('none')->setEmail('email@gmail.com')->setPassword('test')->setFirstName('aleks')->setRoles(array('ROLE_ADMIN'));
+        $em->persist($user);
+        $em->flush();
+        return new Response(sprintf('New user id #%d name: %s', $user->getId(), $user->getUsername() ) );
     }
 
     /**
@@ -74,7 +94,7 @@ fugiat.');
     /**
     * @Route("/add_article", name="add_article", methods="POST")
     */
-    public function addNewArticle(EntityManagerInterface $em, Request $request)
+    public function addNewArticle(EntityManagerInterface $em, Request $request, SessionInterface $session)
     {
         $proceed=true;
         if($_POST['title']=='')
@@ -92,13 +112,14 @@ fugiat.');
         }
         else
         {
+            $user=$session->get('logged_user');
             //save to DB
             $article=new Article();
             $article->setTitle($_POST['title'])
             ->setSlug($_POST['title'].rand(100,999))
             ->setContent($_POST['text'])
             ->setPublishedAt(date_create())
-            ->setAuthor('Somebody')
+            ->setAuthor($user)
             ->setHeartCount(rand(5,100))
             ->setCreatedAt(date_create())
             ->setUpdatedAt(new \DateTime('0000-00-00 00:00:00') )
@@ -107,7 +128,7 @@ fugiat.');
             $em->persist($article);
             $em->flush();
 
-            return new JsonResponse(['reply'=>true, 'content'=>array($article->getId(), $article->getSlug())]);
+            return new JsonResponse(['reply'=>true, 'content'=>array($article->getId(), $article->getSlug(), $session->get('logged_user'))]);
         }
     }
 

@@ -27,7 +27,7 @@ $(document).ready(function()
 			{
 				url:url+'/comment',
 				type:"post",
-				data:{'message':com_mess},
+				data:{'message':com_mess, 'commented':$('#commenter-name').val()},
 				dataType:'json',
 				success: function(data)
 				{
