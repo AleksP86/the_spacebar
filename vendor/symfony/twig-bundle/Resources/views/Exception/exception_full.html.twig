@@ -1,4 +1,36 @@
-{% extends '@Twig/layout.html.twig' %}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-10">
+                <h1>Problem ocurred</h1>
+                {# <p>{{ exception.message }} ({{ status_code }} {{ status_text }})</p> #}
+                {% if status_code==500 %}
+                    <p>Connection to DB lost. Please try again later.</p>
+                {% endif %}
+                {% if status_code==401 %}
+                    <p>Unauthorized access..</p>
+                {% endif %}
+                {% if status_code==403 %}
+                    <p>Access denied because insufficient privileges.</p>
+                {% endif %}
+                {% if status_code==404 %}
+                    <p>Missing page. Check for address misspel.</p>
+                {% endif %}
+                {% if status_code==408 %}
+                    <p>Request time passed. Please refresh page or go back.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+
+
+{# {% extends '@Twig/layout.html.twig' %}
 
 {% block head %}
     <style>
@@ -140,3 +172,5 @@
 {% block body %}
     {% include '@Twig/Exception/exception.html.twig' %}
 {% endblock %}
+
+#}

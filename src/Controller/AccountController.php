@@ -20,10 +20,20 @@ class AccountController extends BaseController
      */
     public function index(LoggerInterface $logger)
     {
-    	$logger->debug('Checking account page for '.$this->getUser()->getEmail());
+    	//$logger->debug('Checking account page for '.$this->getUser()->getEmail());
     	//dd($this->getUser() );
-        /*return $this->render('account/index.html.twig', [
+        return $this->render('account/index.html.twig', [
             'controller_name' => 'AccountController',
-        ]);*/
+        ]);
+    }
+
+    /**
+    * @Route("/api/account", name="api_account")
+    */
+    public function accountApi()
+    {
+        $user=$this->getUser();
+        //dd($user);
+        return $this->json($user);
     }
 }
