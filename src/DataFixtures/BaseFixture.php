@@ -4,8 +4,12 @@ namespace App\DataFixtures;
 
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
+
+//use Doctrine\Migrations\Version\Factory;
+
 use Faker\Factory;
 use Faker\Generator;
+
 
 abstract class BaseFixture extends Fixture
 {

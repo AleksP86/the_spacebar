@@ -2,9 +2,12 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
@@ -19,7 +22,8 @@ class User implements UserInterface
     private $id;
 
     /**
-    * @ORM\Column(type="string", length=180, unique=true);
+    * @ORM\Column(type="string", length=180, unique=true)
+    * @Groups("main")
     */
     private $email;
 
@@ -50,15 +54,27 @@ class User implements UserInterface
 
     /**
     * @ORM\Column(type="string", length=255)
+    * @Groups("main")
     */
     private $firstName;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups("main")
      */
     private $twitterUsername;
 
     private $avatarUrl;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\ApiToken", mappedBy="user", orphanRemoval=true)
+     */
+    private $orphanRemoval;
+
+    public function __construct()
+    {
+        $this->orphanRemoval = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -179,5 +195,36 @@ class User implements UserInterface
             $url .=sprintf('?size=%dx%d', $size, $size);
 
         return $url;
+    }
+
+    /**
+     * @return Collection|ApiToken[]
+     */
+    public function getOrphanRemoval(): Collection
+    {
+        return $this->orphanRemoval;
+    }
+
+    public function addOrphanRemoval(ApiToken $orphanRemoval): self
+    {
+        if (!$this->orphanRemoval->contains($orphanRemoval)) {
+            $this->orphanRemoval[] = $orphanRemoval;
+            $orphanRemoval->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeOrphanRemoval(ApiToken $orphanRemoval): self
+    {
+        if ($this->orphanRemoval->contains($orphanRemoval)) {
+            $this->orphanRemoval->removeElement($orphanRemoval);
+            // set the owning side to null (unless already changed)
+            if ($orphanRemoval->getUser() === $this) {
+                $orphanRemoval->setUser(null);
+            }
+        }
+
+        return $this;
     }
 }

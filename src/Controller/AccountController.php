@@ -34,6 +34,7 @@ class AccountController extends BaseController
     {
         $user=$this->getUser();
         //dd($user);
-        return $this->json($user);
+        //return $this->json($user);
+        return $this->json($user, 200, [], ['groups'=>['main'] ]);
     }
 }
