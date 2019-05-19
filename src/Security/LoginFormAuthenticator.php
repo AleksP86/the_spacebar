@@ -32,6 +32,8 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
 
     private $passwordEncoder;
 
+    private $encodePass;
+
     use TargetPathTrait;
 
     public function __construct(UserRepository $userRepository, RouterInterface $router, CsrfTokenManagerInterface $csrfTokenManager, SessionInterface $session, UserPasswordEncoderInterface $passwordEncoder)
@@ -61,7 +63,6 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
             'csrf_token' => $request->request->get('_csrf_token')
         ];
         $request->getSession()->set(Security::LAST_USERNAME, $credentials['email']);
-
         return $credentials;
     }
 
@@ -74,15 +75,25 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
             throw new InvalidCsrfTokenException();
         }
 
-        return $this->userRepository->findOneBy(['email'=> $credentials['email'], 'password'=> $credentials['password']]);
+        //dd($this->userRepository->findOneBy(['email'=> $credentials['email'] ]) );
+
+        //since email is unique checking by password can be skipped
+        //and it must be skipped if it is coded and form brings uncoded pass
+        return $this->userRepository->findOneBy(['email'=> $credentials['email'] ]);
+        //return $this->userRepository->findOneBy(['email'=> $credentials['email'], 'password'=> $credentials['password']]);
     }
 
     public function checkCredentials($credentials, UserInterface $user)
     {
+        //dump($user);
+        //dump($credentials['password']);
+        //dump($user->getPassword());
+        //dump( $this->passwordEncoder->isPasswordValid($user, $credentials['password']) );
         if($credentials['password']!=$user->getPassword())
         {
             $this->passwordEncoder->isPasswordValid($user, $credentials['password']);
         }
+        //dump('passed');
         //if it got here then user is obtained, othervise it would escape back to login
         $credentials['username']=$user->getUsername();
         $this->session->set('logged_user', $credentials['username']);
