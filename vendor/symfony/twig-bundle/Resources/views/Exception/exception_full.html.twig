@@ -6,8 +6,17 @@
             <div class="col-sm-12 col-md-10">
                 <h1>Problem ocurred</h1>
                 {# <p>{{ exception.message }} ({{ status_code }} {{ status_text }})</p> #}
+                
                 {% if status_code==500 %}
+
+                    {% if 'Duplicate entry' in  exception.message %}
+                    <p>Provided email is already used for another account.</p>
+                    {% endif %}
+
+                    {% if 'No connection could be made because the target machine actively refused it.' in  exception.message %}
                     <p>Connection to DB lost. Please try again later.</p>
+                    {% endif %}
+                    
                 {% endif %}
                 {% if status_code==401 %}
                     <p>Unauthorized access..</p>

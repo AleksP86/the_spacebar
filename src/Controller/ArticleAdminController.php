@@ -19,14 +19,12 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
-/**
- * @IsGranted("ROLE_ADMIN_ARTICLE")
- */
 
 class ArticleAdminController extends AbstractController
 {
     /**
      * @Route("/admin", name="article_admin")
+     * @IsGranted("ROLE_ADMIN_ARTICLE")
      */
     public function index(EntityManagerInterface $em)
     {
@@ -44,8 +42,10 @@ class ArticleAdminController extends AbstractController
     }
 
     /**
-    * @Route("/admin/new_user");
+    * @Route("/admin/new_user")
+    * @IsGranted("ROLE_ADMIN_ARTICLE")
     */
+    /*
     public function newUser(EntityManagerInterface $em)
     {
         $user=new User();
@@ -54,10 +54,13 @@ class ArticleAdminController extends AbstractController
         $em->flush();
         return new Response(sprintf('New user id #%d name: %s', $user->getId(), $user->getUsername() ) );
     }
+    */
 
     /**
     * @Route("/admin/article/new")
+    * @IsGranted("ROLE_ADMIN_ARTICLE")
     */
+    /*
     public function new(EntityManagerInterface $em)
     {
     	//return new Response('space rocks... include comets, asteroids & meteoroids');
@@ -90,9 +93,12 @@ fugiat.');
     		//return new Response('space rocks... include comets, asteroids & meteoroids');
     		return new Response(sprintf('New article id #%d slug: %s', $article->getId(), $article->getSlug() ) );
     }
+    */
+
 
     /**
     * @Route("/add_article", name="add_article", methods="POST")
+    * @IsGranted("ROLE_ADMIN_ARTICLE")
     */
     public function addNewArticle(EntityManagerInterface $em, Request $request, SessionInterface $session)
     {
@@ -134,6 +140,7 @@ fugiat.');
 
     /**
     * @Route("/add_quote", name="add_quote")
+    * @IsGranted("ROLE_ADMIN_ARTICLE")
     */
     public function addNewQuote(EntityManagerInterface $em, Request $request)
     {
@@ -169,5 +176,27 @@ fugiat.');
 
             return new JsonResponse(['reply'=>true, 'content'=>array($quote->getId(), $quote->getAuthor())]);
         }
+    }
+
+    /**
+    * @Route("/admin/article/{id}/edit")
+    * @IsGranted("MANAGE", subject="article")
+    */
+    public function edit(Article $article)
+    {
+        
+        if (!$this->isGranted('MANAGE', $article))
+        {
+
+        }
+        dd($article);
+        
+        /*
+        if ($article->getAuthor() != $this->getUser() && !$this->isGranted('ROLE_ADMIN_ARTICLE'))
+        {
+            throw $this->createAccessDeniedException('No access!');
+        }
+        dd($article);
+        */
     }
 }

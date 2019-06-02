@@ -104,14 +104,14 @@ class WelcomeController extends AbstractController
             $publish_message[]=$message;
             //die();
 
-            $story_list[]=array('title'=>$story->getTitle(), 'slug'=>$story->getSlug(), 'release'=>$message, 'author'=>$story->getAuthor());
+            $story_list[]=array('title'=>$story->getTitle(), 'slug'=>$story->getSlug(), 'release'=>$message, 'Sauthor'=>$story->getAuthor());
     	}
 
         $quotes=$this->getDoctrine()->getRepository(Quotes::class)->findAll();
         $quotes_list=array();
         foreach($quotes as $quote)
         {
-            $quotes_list[]=array('author'=>$quote->getAuthor(),'message'=>$quote->getContent(), 'link'=>$quote->getLink());
+            $quotes_list[]=array('Qauthor'=>$quote->getAuthor(),'message'=>$quote->getContent(), 'link'=>$quote->getLink());
         }
         
     	return $this->render('article/homepage.html.twig',

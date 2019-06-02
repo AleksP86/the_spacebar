@@ -39,7 +39,7 @@ class Article
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $author;
+    //private $author;
 
     /**
      * @ORM\Column(type="integer")
@@ -60,6 +60,12 @@ class Article
      * @ORM\Column(type="datetime")
      */
     private $updatedAt;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="articles")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $author;
 
     public function getId(): ?int
     {
@@ -114,17 +120,20 @@ class Article
         return $this;
     }
 
+    /*
     public function getAuthor(): ?string
     {
         return $this->author;
     }
-
+    */
+    /*
     public function setAuthor(?string $author): self
     {
         $this->author = $author;
 
         return $this;
     }
+    */
 
     public function getHeartCount(): ?int
     {
@@ -176,6 +185,18 @@ class Article
     public function setUpdatedAt(\DateTimeInterface $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    public function getAuthor(): ?User
+    {
+        return $this->author;
+    }
+
+    public function setAuthor(?User $author): self
+    {
+        $this->author = $author;
 
         return $this;
     }

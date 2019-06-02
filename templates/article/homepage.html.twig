@@ -42,91 +42,19 @@
                             <span>{{ story['title']}}</span>
                             <br>
                             <span class="align-left article-details"><img class="article-author-img rounded-circle" src="{{ asset('images/alien-profile.png') }}"> 
-                            {% if story['author'] != '' %} 
-                            {{ story['author'] }} 
+                            
+                            {% if story['Sauthor'] != '' %} 
+                            {{ story['Sauthor'] }} 
                             {% else %} 
                             Mike Ferengi  
                             {% endif %}
+
                             </span>
                             <span class="pl-5 article-details float-right"> {{ story['release'] }} </span>
                         </div>
                     </a>
                 </div>
                 {% endfor%}
-
-                {#
-                <div>
-                    <p>{{ publish_message[0] }}</p>
-                    <p>{{ publish_message[1] }}</p>
-                </div>
-
-                {% for i in counter..publish_message|length -1 %}
-                    {{publish_message[ i ]}}
-                {% endfor %}
-
-                #}
-
-                {#
-                <div class="article-container my-1">
-                    <a href={{ path('article_show', {slug: 'why-asteroids-taste-like-bacon'}) }}>
-                        <img class="article-img" src="{{ asset('images/asteroid.jpeg') }}">
-                        <div class="article-title d-inline-block pl-3 align-middle">
-                            <span>Why do Asteroids Taste Like Bacon?</span>
-                            <br>
-                            <span class="align-left article-details"><img class="article-author-img rounded-circle" src="{{ asset('images/alien-profile.png') }}"> Mike Ferengi </span>
-                            <span class="pl-5 article-details float-right"> 3 hours ago</span>
-                        </div>
-                    </a>
-                </div>
-
-                
-                <div class="article-container my-1">
-                    <a href={{ path('article_show', {slug: '2'}) }}>
-                        <img class="article-img"  src="{{ asset('images/mercury.jpeg') }}">
-                        <div class="article-title d-inline-block pl-3 align-middle">
-                            <span>Life on Planet Mercury: <br> Tan, Relaxing and Fabulous</span>
-                            <br>
-                            <span class="align-left article-details"><img class="article-author-img rounded-circle" src="{{ asset('images/astronaut-profile.png') }}"> Amy Oort </span>
-                            <span class="pl-5 article-details float-right"> 6 days ago</span>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="article-container my-1">
-                    <a href={{ path('article_show', {slug: '3'}) }}>
-                        <img class="article-img" src="{{ asset('images/lightspeed.png') }}">
-                        <div class="article-title d-inline-block pl-3 align-middle">
-                            <span>Light Speed Travel: <br> Fountain of Youth or Fallacy</span>
-                            <br>
-                            <span class="align-left article-details"><img class="article-author-img rounded-circle" src="{{ asset('images/astronaut-profile.png') }}"> Amy Oort </span>
-                            <span class="pl-5 article-details float-right"> 2 weeks ago</span>
-                        </div>
-                    </a>
-                </div>
-                #}
-
-
-
-                {#
-                {% for story in story_list %}
-                <div class="article-container my-1">
-                    <a href={{ path('article_show', {slug: story['id']}) }}>
-                        <img class="article-img" src="{{ asset(story['image']) }}">
-                        <div class="article-title d-inline-block pl-3 align-middle">
-                            <span> {{ story['name'] }}</span>
-                            <br>
-                            <span class="align-left article-details">
-                            <img class="article-author-img rounded-circle" src="{{ asset('images/astronaut-profile.png') }}"> 
-                            {{ story['author'] }}
-                            </span>
-                            <span class="pl-5 article-details float-right" style="padding-top:5px">{{ story['published'] }}</span>
-                        </div>
-                    </a>
-                </div>
-                {% endfor %}
-
-                #}
-                
             </div>
             
 
@@ -155,9 +83,9 @@
                     "{{ quote['message'] }}"<br/>— 
 
                     {% if quote['link']!='' %}
-                    <a href={{ quote['link'] }}>{{ quote['author'] }}</a>
+                    <a href={{ quote['link'] }}>{{ quote['Qauthor'] }}</a>
                     {% else %}
-                    {{ quote['author'] }}
+                    {{ quote['Qauthor'] }}
                     {% endif %}
                     </p>
                     {% endfor %}
